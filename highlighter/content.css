@@ -1,6 +1,6 @@
 .hl-ext-highlight {
   background-color: var(--hl-color, #fff176);
-  color: inherit;
+  color: #111 !important;
   border-radius: 2px;
   padding: 0 1px;
   cursor: pointer;
