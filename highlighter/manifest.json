@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Highlighter",
+  "version": "1.0.0",
+  "description": "Highlight text on any webpage. Highlights persist across visits.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqsqTZF3R0rVvJL0rEuP+ah/Fj3BEIrbYcBcPyF4ElNLZnM/GfYkHQEQ/HmlMx/sVEVXN2s9UrHyysOrC0H4Unj1eRzf7bLhBRlUnt37tvdzy32j47YAEAOgMccoYGED14u0hPHDeBvP+HZjZmQOikzTxLo03o1Yek0XDR2ZYTISWcs96ccdku+aCTKO1XlME36lZgt67XWA2+gqygtdzP/AfDmaVfCqDrEd/TJlj8CXxqOHe9/XFcBSWGAHT0D9TOIeXuXhoZNWyTE2kShyuT+3EHkoR7KgSEnISg1IOGY1YrAzXkxXzSIZ8y9HCNcRqRzwgy++Tt8Z9+7XG372JSQIDAQAB",
+  "permissions": ["storage", "contextMenus", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Highlighter"
+  },
+  "commands": {
+    "highlight-selection": {
+      "suggested_key": {
+        "default": "Alt+H",
+        "mac": "Alt+H"
+      },
+      "description": "Highlight the current selection (yellow)"
+    }
+  }
+}

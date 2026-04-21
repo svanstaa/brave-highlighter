@@ -1,0 +1,4 @@
+# Private signing key — NEVER commit. Required only for repacking/publishing;
+# the matching public key lives in highlighter/manifest.json under "key".
+highlighter.pem
+*.pem
